@@ -28,8 +28,8 @@ public class View extends JFrame {
         setTitle(title);
         buildParts();
         setVisible(true);
-        cWin = new ImageIcon("computerwin.gif");
-        hWin = new ImageIcon("humanwin.gif");
+        cWin = new ImageIcon("bin/cWin.gif");
+        hWin = new ImageIcon("bin/hWin.gif");
     }
     
     //Sets the pointer to the model.
@@ -169,6 +169,7 @@ public class View extends JFrame {
             else if  (but == 6){b6.setSelected(2);}
             else if  (but == 7){b7.setSelected(2);}
             else if  (but == 8){b8.setSelected(2);}
+
         }
     
     

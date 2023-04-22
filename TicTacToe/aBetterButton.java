@@ -6,11 +6,8 @@
  * button creation and can be used to identify that button later.
  */
 
-import java.io.*;
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.JOptionPane.*;
 import javax.swing.ImageIcon;
 
 public class aBetterButton extends JButton {
@@ -22,22 +19,32 @@ public class aBetterButton extends JButton {
     public aBetterButton(String alias, int r, int c){
         //super(s);
         this.alias = alias;
-        xicon = new ImageIcon("x.gif");
-        oicon = new ImageIcon("o.gif");
-        cWin = new ImageIcon("cWin.gif");
-        hWin = new ImageIcon("hWin.gif");
+
+//Updated code that actually sets button icons properly. 2023.
+        xicon = new ImageIcon(getClass().getResource("bin/x.gif"));
+        oicon = new ImageIcon(getClass().getResource("bin/o.gif"));
+        cWin = new ImageIcon(getClass().getResource("bin/cWin.gif"));
+        hWin = new ImageIcon(getClass().getResource("bin/hWin.gif"));
+
+
+
+        //The comment below is my original 2004 code.
+//        xicon = new ImageIcon("bin/x.gif");
+//        oicon = new ImageIcon("bin/o.gif");
+//        cWin = new ImageIcon("bin/cWin.gif");
+//        hWin = new ImageIcon("bin/hWin.gif");
         setBackground(Color.WHITE);
-	    select = false;
-	    row = r;
-	    col = c;
-	    if (alias.equals("cWin")){
-	        setIcon(cWin);
-	    }else if (alias.equals("hWin")){
-	        setIcon(hWin);
-	    }else{;}
+        select = false;
+        row = r;
+        col = c;
+        if (alias.equals("cWin")){
+            setIcon(cWin);
+        }else if (alias.equals("hWin")){
+            setIcon(hWin);
+        }else{;}
     }
-    
-    
+
+
     //Accessor for the alias variable
     public String getAlias(){
         return alias;
@@ -57,13 +64,15 @@ public class aBetterButton extends JButton {
     
     
     public void setSelected(int sel){
-	  select = true;
+        select = true;
         selection = sel;
         if (sel == 1){
             setIcon(xicon);
+            //System.out.println("x icon set");
         }
         if (sel == 2) {
             setIcon(oicon);
+            //System.out.println("o icon set");
         }else {;}
     }
     
